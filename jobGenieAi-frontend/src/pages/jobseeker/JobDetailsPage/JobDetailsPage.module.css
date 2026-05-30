@@ -1,0 +1,298 @@
+/* JobDetailsPage.module.css */
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #fafafa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.main {
+    flex: 1;
+    padding: 6rem 2rem 4rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.backButton {
+    color: #6366f1;
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    padding: 0;
+    font-family: inherit;
+}
+
+.backButton:hover {
+    text-decoration: underline;
+}
+
+.contentWrapper {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 2rem;
+}
+
+/* Left Panel */
+.leftPanel {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 2.5rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 0.5rem;
+    font-family: inherit;
+}
+
+.company {
+    font-size: 1rem;
+    color: #6b7280;
+    margin: 0;
+    font-family: inherit;
+}
+
+.badge {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.tags {
+    display: flex;
+    gap: 0.65rem;
+    margin-bottom: 2rem;
+}
+
+.tag {
+    padding: 0.5rem 1rem;
+    background: #eef2ff;
+    color: #6366f1;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    font-family: inherit;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.sectionTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 1rem;
+    font-family: inherit;
+}
+
+.text {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin: 0;
+    font-family: inherit;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list li {
+    font-size: 0.95rem;
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-family: inherit;
+}
+
+.list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #6366f1;
+    font-weight: bold;
+}
+
+/* Right Panel */
+.rightPanel {
+    position: sticky;
+    top: 6rem;
+    height: fit-content;
+}
+
+.summaryCard {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.summaryTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 1.5rem;
+    font-family: inherit;
+}
+
+.summaryItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.label {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    font-weight: 500;
+    font-family: inherit;
+}
+
+.value {
+    font-size: 0.95rem;
+    color: #111827;
+    font-weight: 500;
+    font-family: inherit;
+}
+
+.applyButton {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+    background: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+    font-family: inherit;
+}
+
+.applyButton:hover {
+    background: #474af7;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 95, 185, 0.3);
+}
+
+/* Saved resume modal */
+.resumeModalOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.resumeModal {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 1.75rem 1.9rem 1.5rem;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.35);
+}
+
+.resumeModalTitle {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.resumeModalText {
+    margin: 0 0 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #4b5563;
+}
+
+.resumeModalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.resumeModalPrimary,
+.resumeModalSecondary {
+    border-radius: 999px;
+    padding: 0.55rem 1.3rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.resumeModalPrimary {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: #ffffff;
+}
+
+.resumeModalSecondary {
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .contentWrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .rightPanel {
+        position: static;
+    }
+}
+
+@media (max-width: 640px) {
+    .main {
+        padding: 5rem 1.5rem 4rem;
+    }
+
+    .leftPanel {
+        padding: 1.75rem;
+    }
+
+    .summaryCard {
+        padding: 1.5rem;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+}

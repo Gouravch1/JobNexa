@@ -1,0 +1,167 @@
+/* JobListCard.module.css */
+
+.jobCard {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 230px;
+}
+
+.jobCard:hover {
+    border-color: #6366f1;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+    transform: translateY(-2px);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.jobTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+    font-family: inherit;
+}
+
+.badge {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.saveButton {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #6b7280;
+    flex-shrink: 0;
+}
+
+.saveButton:hover {
+    border-color: #6366f1;
+    background-color: #eef2ff;
+    color: #4f46e5;
+}
+
+.saveButtonSaved {
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    border-color: #4f46e5;
+    color: #ffffff;
+}
+
+.saveButtonSaved:hover {
+    background: linear-gradient(135deg, #4338ca, #4f46e5);
+}
+
+.company {
+    font-size: 0.9rem;
+    color: #6366f1;
+    margin: 0 0 1rem;
+    font-weight: 500;
+    font-family: inherit;
+}
+
+.description {
+    font-size: 0.875rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0 0 1.25rem;
+    font-family: inherit;
+}
+
+.skills {
+    font-size: 0.85rem;
+    color: #4b5563;
+    margin: 0 0 1.1rem;
+    font-family: inherit;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.skillsLabel {
+    font-weight: 600;
+    color: #111827;
+    margin-right: 0.25rem;
+}
+
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+}
+
+.tag {
+    padding: 0.375rem 0.75rem;
+    background: #eef2ff;
+    color: #6366f1;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: inherit;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #9ca3af;
+    padding-top: 1rem;
+    border-top: 1px solid #f3f4f6;
+    font-family: inherit;
+    margin-top: auto;
+}
+
+.location {
+    color: #6b7280;
+}
+
+.posted {
+    color: #9ca3af;
+}
+
+.applyButton {
+    margin-left: 0.75rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.applyButton:disabled {
+    opacity: 0.6;
+    cursor: default;
+}

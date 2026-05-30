@@ -1,0 +1,236 @@
+/* RecruiterHero.module.css */
+
+.heroSection {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f9fafb 0%, #eef2ff 100%);
+    padding: 3rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.heroSection::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.15), transparent 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    background: white;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.badgeIcon {
+    font-size: 1.1rem;
+}
+
+.title {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: 900;
+    color: var(--text-dark);
+    line-height: 1.15;
+    margin: 0 0 1.5rem;
+    letter-spacing: -1px;
+}
+
+.highlight {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.15rem;
+    color: var(--text-medium);
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+/* Stats Cards */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+}
+
+.statCard {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.statCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.statIcon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.statContent {
+    text-align: left;
+}
+
+.statValue {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-indigo);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.statLabel {
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    font-weight: 500;
+}
+
+/* CTAs */
+.ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.primaryButton {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: white;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+}
+
+.primaryButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+.secondaryButton {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: 1.5px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--text-dark);
+    background: white;
+}
+
+.secondaryButton:hover {
+    border-color: var(--primary-indigo);
+    color: var(--primary-indigo);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .heroSection {
+        min-height: 70vh;
+        padding: 6rem 1.5rem 3rem;
+    }
+
+    .title {
+        font-size: 2.25rem;
+    }
+
+    .subtitle {
+        font-size: 1.05rem;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .ctas {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primaryButton,
+    .secondaryButton {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroSection {
+        padding: 5rem 1rem 2.5rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .badge {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .statValue {
+        font-size: 1.75rem;
+    }
+}

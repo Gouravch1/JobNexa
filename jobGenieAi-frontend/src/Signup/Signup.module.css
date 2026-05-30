@@ -1,0 +1,103 @@
+/* Signup.module.css */
+
+.form {
+    width: 100%;
+}
+
+/* Password Strength Indicator */
+.passwordStrength {
+    margin-top: -0.75rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.strengthBar {
+    flex: 1;
+    height: 4px;
+    background-color: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.strengthFill {
+    height: 100%;
+    transition: width 0.3s ease, background-color 0.3s ease;
+    border-radius: 999px;
+}
+
+.strengthLabel {
+    font-size: 0.875rem;
+    font-weight: 600;
+    min-width: 60px;
+    text-align: right;
+}
+
+/* Divider */
+.divider {
+    position: relative;
+    text-align: center;
+    margin: 1.75rem 0;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--border-color);
+}
+
+.divider span {
+    position: relative;
+    display: inline-block;
+    padding: 0 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--text-light);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text-medium);
+}
+
+.link {
+    color: var(--primary-indigo);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.link:hover {
+    color: var(--primary-indigo-dark);
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .passwordStrength {
+        margin-top: -0.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .strengthLabel {
+        font-size: 0.8rem;
+        min-width: 50px;
+    }
+
+    .divider {
+        margin: 1.5rem 0;
+    }
+
+    .footer {
+        font-size: 0.9rem;
+    }
+}

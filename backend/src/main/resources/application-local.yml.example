@@ -1,0 +1,30 @@
+# Copy this file to application-local.yml and fill in your real values.
+# application-local.yml is gitignored and will NOT be pushed to GitHub.
+
+spring:
+  datasource:
+    username: root
+    password: your-mysql-password-here
+
+jwt:
+  secret: your-jwt-secret-at-least-256-bits-long-for-hs256
+
+elevenlabs:
+  api:
+    key: your-elevenlabs-api-key-here
+    # voice-id: optional-override
+
+# Email (Gmail example — use an App Password, not your login password)
+# app:
+#   mail:
+#     enabled: true
+#     from: your-email@gmail.com
+#     from-name: JobGenie AI
+# spring:
+#   mail:
+#     username: your-email@gmail.com
+#     password: your-gmail-app-password
+
+# deepseek:
+#   api:
+#     key: your-deepseek-api-key-here

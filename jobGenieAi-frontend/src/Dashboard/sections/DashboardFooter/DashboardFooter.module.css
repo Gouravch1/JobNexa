@@ -1,0 +1,146 @@
+/* DashboardFooter.module.css */
+
+.footer {
+    background: var(--text-dark);
+    color: white;
+    padding: 4rem 2rem 2rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Branding */
+.brand {
+    max-width: 350px;
+}
+
+.logo {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.logo span {
+    color: var(--primary-indigo);
+}
+
+.tagline {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 1.5rem;
+}
+
+.social {
+    display: flex;
+    gap: 1rem;
+}
+
+.socialLink {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.socialLink:hover {
+    background: var(--primary-indigo);
+    transform: translateY(-2px);
+}
+
+/* Links */
+.linksTitle {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.linksList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.linksList a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.linksList a:hover {
+    color: white;
+}
+
+/* Bottom */
+.bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .content {
+        grid-template-columns: 1.5fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 1.5rem 1.5rem;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .brand {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 2.5rem 1rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .socialLink {
+        width: 36px;
+        height: 36px;
+    }
+}

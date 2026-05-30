@@ -1,0 +1,106 @@
+/* InternshipsSection.module.css */
+
+.section {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #f9fafb 0%, #eef2ff 100%);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.viewAllButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: 1.5px solid var(--border-color);
+    background: white;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.viewAllButton:hover {
+    border-color: var(--primary-indigo);
+    color: var(--primary-indigo);
+    transform: translateX(3px);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.loading,
+.emptyText {
+    min-height: 42vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    border: 1px dashed #e5e7eb;
+    border-radius: 12px;
+    background: #f9fafb;
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section {
+        padding: 3rem 1.5rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .viewAllButton {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,13 @@
+/* RecruiterDashboard.module.css */
+
+.dashboard {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #f9fafb 0%, #eef2ff 100%);
+}
+
+.main {
+    flex: 1;
+    padding-top: 80px;
+}

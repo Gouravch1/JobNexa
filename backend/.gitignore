@@ -1,0 +1,9 @@
+target/
+uploads/
+*.log
+*.class
+
+# Secrets — never commit
+src/main/resources/application-local.yml
+.env
+.env.*

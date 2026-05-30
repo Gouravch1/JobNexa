@@ -1,0 +1,252 @@
+/* DashboardNav.module.css */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0.75rem 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.navBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.navScrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--text-dark);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo span {
+    color: var(--primary-indigo);
+}
+
+/* Navigation Links */
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navLink {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: none;
+    background: none;
+    color: var(--text-medium);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.navLink:hover {
+    background-color: rgba(79, 70, 229, 0.1);
+    color: var(--primary-indigo);
+}
+
+/* Profile Section */
+.profileSection {
+    position: relative;
+}
+
+.profileButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.profileButton:hover {
+    transform: scale(1.05);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-indigo);
+}
+
+.avatarPlaceholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border: 2px solid var(--primary-indigo);
+}
+
+/* Dropdown */
+.dropdown {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    min-width: 220px;
+    overflow: hidden;
+    animation: dropdownSlide 0.2s ease-out;
+    border: 1px solid var(--border-color);
+}
+
+@keyframes dropdownSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdownHeader {
+    padding: 1rem;
+    background: linear-gradient(135deg, #f9fafb, #eef2ff);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dropdownName {
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+.dropdownEmail {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.dropdownDivider {
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 0.5rem 0;
+}
+
+.dropdownItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: none;
+    color: var(--text-dark);
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.dropdownItem:hover {
+    background-color: #f9fafb;
+    color: var(--primary-indigo);
+}
+
+.dropdownIcon {
+    flex-shrink: 0;
+}
+
+.logoutItem {
+    color: #ef4444;
+}
+
+.logoutItem:hover {
+    background-color: #fef2f2;
+    color: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .navLinks {
+        gap: 0.25rem;
+    }
+
+    .navLink {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .navBox {
+        padding: 0.6rem 1rem;
+    }
+
+    .navLinks {
+        display: none;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .navBox {
+        padding: 0.5rem 0.75rem;
+        border-radius: 12px;
+    }
+
+    .dropdown {
+        min-width: 200px;
+    }
+}

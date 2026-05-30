@@ -1,0 +1,281 @@
+/* LandingPage.module.css */
+
+/* --- 1. Base, Fonts & Color Scheme (tokens in global.css) --- */
+.pageWrapper {
+  font-family: var(--font-sans);
+  color: var(--text-medium);
+  background-color: var(--background-light);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* --- 2. General Layout & Typography --- */
+.container {
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 0 32px;
+}
+h1, h2, h3 { color: var(--text-dark); font-weight: 700; letter-spacing: -0.5px; }
+p { line-height: 1.7; font-size: 1rem; }
+.sectionHeader { text-align: center; max-width: 650px; margin: 0 auto 3.5rem; }
+.kicker { font-family: var(--font-mono); font-size: 0.9rem; color: var(--primary-indigo); display: block; margin-bottom: 0.75rem; font-weight: 600; }
+.sectionTitle { font-size: clamp(1.8rem, 4vw, 2.25rem); margin: 0 0 1rem; line-height: 1.2; }
+.sectionSubtitle { font-size: 1.1rem; color: var(--text-light); }
+
+/* --- 3. Header & Navigation --- */
+.header { position: fixed; top: 1rem; left: 0; right: 0; z-index: 100; }
+.navBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 0.5rem 0.5rem 0.5rem 1.25rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.05), 0 2px 4px -2px rgba(0,0,0,.05);
+}
+.navScrolled {
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-color: var(--border-color);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.05), 0 2px 4px -2px rgba(0,0,0,.05);
+}
+.logo { font-size: 1.5rem; font-weight: 900; color: var(--text-dark); text-decoration: none; }
+.logo span { color: var(--primary-indigo); }
+.navButtons { display: flex; gap: 0.5rem; }
+.navButton {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.loginButton { background-color: transparent; color: var(--text-medium); }
+.loginButton:hover { background-color: #f3f4f6; }
+.signupButton { background-color: var(--text-dark); color: var(--background-white); }
+.signupButton:hover { background-color: #000; }
+
+/* --- 4. Hero Section --- */
+.heroSection { padding: 9rem 0 5rem; position: relative; overflow: hidden; }
+.heroGrid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 3rem; align-items: center; }
+.heroTitle { font-size: clamp(2rem, 3vw, 3rem); line-height: 1.15; margin: 0 0 1.5rem; font-weight: 800; letter-spacing: -1.5px; }
+.heroSubtitle { font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem; max-width: 500px; }
+.heroCtas { display: flex; gap: 1rem; align-items: center; }
+.primaryCta {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: white;
+  background-image: linear-gradient(to right, #4f46e5, #6366f1);
+  background-size: 200% auto;
+  box-shadow: 0 4px 20px 0 var(--primary-glow);
+}
+.primaryCta:hover { 
+  transform: translateY(-3px); 
+  box-shadow: 0 6px 25px 0 var(--primary-glow);
+  background-position: right center;
+}
+.brandsRow { margin-top: 3rem; } 
+.brandsLabel { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.5px; color: #9ca3af; margin-bottom: 1.25rem; display: block; }
+.brandPills { position: relative; overflow: hidden; height: 32px; mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); }
+.logoTrack { display: flex; gap: 2.5rem; animation: infiniteScroll 40s linear infinite; }
+.brandItem { display: inline-flex; align-items: center; flex-shrink: 0; }
+.brandLogo { height: 22px; width: auto; opacity: 0.8; transition: all 0.3s ease; }
+.brandItem:hover .brandLogo { opacity: 1; transform: scale(1.1); }
+@keyframes infiniteScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Hero Animation & Background Glow */
+.heroArt { position: relative; height: 450px; }
+.heroGlow {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 500px; height: 500px;
+  background-image: radial-gradient(circle, rgba(79, 70, 229, 0.15), transparent 60%);
+  animation: slowPan 15s ease-in-out infinite alternate;
+  z-index: 0;
+}
+@keyframes slowPan {
+  0% { transform: translate(-40%, -60%); }
+  100% { transform: translate(-60%, -40%); }
+}
+.heroVector { position: relative; z-index: 1; width: 100%; height: 100%; max-width: 450px; max-height: 450px; }
+.heroVector .pulse { animation: pulseCore 2.5s ease-in-out infinite; }
+@keyframes pulseCore { 50% { transform: scale(0.95); opacity: 0.8; } }
+.pathDraw {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: drawPath 4s ease-in-out infinite;
+}
+@keyframes drawPath { 
+  50%, 100% { stroke-dashoffset: 0; }
+}
+.mathFormula { 
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.6rem 1rem 0.6rem 2.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  opacity: 0;
+  animation: floatFadeIn 10s ease-in-out infinite;
+  backdrop-filter: blur(6px);
+  z-index: 2;
+}
+.mathFormula::before {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary-indigo);
+  opacity: 0.5;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+.formula1 { top: 15%; left: 0; animation-delay: 0s; }
+.formula2 { top: 45%; right: -5%; animation-delay: -5s; }
+.formula3 { bottom: 20%; left: 5%; animation-delay: -2s; }
+@keyframes floatFadeIn {
+  0%, 100% { opacity: 0; transform: translateY(20px); }
+  25%, 75% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 5. Features Section --- */
+.featuresSection { padding: 6rem 0; background: var(--background-white); border-top: 1px solid var(--border-color); }
+.featuresGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.featureTile { background: var(--background-white); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; text-align: center; transition: all 0.3s ease; }
+.featureTile:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.07); }
+.featureIcon { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; margin-bottom: 1.25rem; background-color: #eef2ff; border-radius: 10px; color: var(--primary-indigo); }
+.featureTitle { font-size: 1.2rem; margin: 0 0 0.5rem; }
+.featureText { font-size: 0.95rem; color: var(--text-light); }
+
+/* --- 6. Workflow Section --- */
+.workflowSection { padding: 6rem 0; }
+.timeline { display: flex; justify-content: space-between; position: relative; width: 100%; margin: 2rem 0; }
+.timeline::before { content: ''; position: absolute; top: 12px; left: 50px; right: 50px; height: 2px; background-color: var(--border-color); }
+.timelineItem { position: relative; flex: 1; padding: 2.5rem 1rem 0; text-align: center; }
+.timelineConnector { position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 1; }
+.timelineDot { width: 24px; height: 24px; background-color: var(--background-light); border: 2px solid var(--border-color); border-radius: 50%; box-shadow: 0 0 0 4px var(--background-light); transition: all 0.3s ease; }
+.timelineItem:hover .timelineDot { border-color: var(--primary-indigo); transform: scale(1.1); }
+.timelineContent { padding-top: 1rem; }
+.timelineStep { font-family: var(--font-mono); color: var(--text-light); font-weight: 600; margin-bottom: 0.5rem; display: block; font-size: 0.85rem; }
+.timelineTitle { font-size: 1.1rem; margin: 0 0 0.5rem; }
+.timelineText { font-size: 0.9rem; color: var(--text-light); margin: 0; }
+
+/* --- 7. AI Interview Section --- */
+.aiSection { padding: 6rem 0; background: var(--background-white); border-top: 1px solid var(--border-color); }
+.aiGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.aiContent .sectionTitle { text-align: left; }
+.aiContent p { max-width: 450px; }
+.aiList { list-style-type: none; padding: 0; margin: 1.5rem 0 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.aiList li { padding-left: 1.75rem; position: relative; font-size: 1rem; }
+.aiList li::before { content: '✓'; position: absolute; left: 0; top: 2px; color: var(--primary-indigo); font-weight: 700; }
+.aiAnalysis { position: relative; height: 350px; }
+.aiVector { width: 100%; height: 100%; }
+.aiVector .waveform { stroke: var(--primary-indigo); stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 4s ease-in-out infinite; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.aiVector .node { fill: var(--primary-indigo); opacity: 0.7; animation: pulseNode 2s ease-in-out infinite alternate; }
+@keyframes pulseNode { to { r: 6; opacity: 1; } }
+
+/* --- 8. Testimonials Section --- */
+.testimonialsSection { padding: 6rem 0; }
+.testimonialsGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.testimonialCard { background-color: var(--background-white); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; }
+.testimonialQuote { font-size: 1.05rem; font-weight: 500; color: var(--text-dark); margin: 0 0 1.5rem; position: relative; }
+.testimonialQuote::before { content: '“'; position: absolute; top: -0.5rem; left: -1rem; font-size: 3rem; line-height: 1; color: var(--primary-indigo); font-weight: 800; opacity: 0.1; }
+.testimonialMeta { border-top: 1px solid var(--border-color); padding-top: 1.5rem; }
+.testimonialName { display: block; font-weight: 600; color: var(--text-dark); }
+.testimonialRole { font-size: 0.9rem; color: var(--text-light); }
+
+/* --- 9. FAQ & Final CTA --- */
+.faqSection { padding: 6rem 0; border-top: 1px solid var(--border-color); }
+.faqGrid { max-width: 750px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.5rem; }
+.faqCard { border-bottom: 1px solid var(--border-color); }
+.faqCard[open] { padding-bottom: 1rem; }
+.faqCard summary { list-style: none; cursor: pointer; padding: 1.25rem 0.5rem; font-weight: 600; font-size: 1.05rem; color: var(--text-dark); display: flex; justify-content: space-between; align-items: center; }
+.faqCard summary::-webkit-details-marker { display: none; }
+.faqCard summary::after { content: ''; width: 0.7em; height: 0.7em; border-right: 2px solid var(--text-light); border-bottom: 2px solid var(--text-light); transform: rotate(45deg); transition: transform 0.3s ease; }
+.faqCard[open] summary::after { transform: rotate(225deg); }
+.faqCard > div { color: var(--text-light); padding: 0 0.5rem; }
+
+.finalCtaSection { padding: 6rem 0; }
+.finalCtaCard { text-align: center; background: var(--text-dark); color: white; border-radius: 16px; padding: 4rem 2rem; }
+.finalCtaTitle { color: white; font-size: clamp(1.8rem, 4vw, 2.25rem); margin-bottom: 1rem; }
+.finalCtaCard p { color: #d1d5db; margin-bottom: 2rem; max-width: 500px; margin-inline: auto; }
+.finalCtaCard .primaryCta { background: var(--primary-indigo); color: white; }
+.finalCtaCard .primaryCta:hover { background: var(--primary-indigo-dark); background-position: initial; }
+
+/* --- 10. Footer --- */
+.footer { padding: 3rem 0; text-align: center; border-top: 1px solid var(--border-color); }
+.footer p { font-size: 0.9rem; color: var(--text-light); margin: 0; }
+
+/* --- 11. Scroll Animations & Responsive --- */
+.scrollHidden { opacity: 0; transform: translateY(20px); transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); }
+.scrollVisible { opacity: 1; transform: translateY(0); }
+
+/* --- NEW: Scroll Down Arrow Styles --- */
+.scrollDownArrow {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  animation: bounce 2.5s ease-in-out infinite;
+}
+.scrollDownArrow:hover {
+  opacity: 1;
+  animation-play-state: paused; /* Pause animation on hover for better UX */
+}
+.scrollDownArrow svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--text-medium);
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+  40% { transform: translate(-50%, -10px); }
+  60% { transform: translate(-50%, -5px); }
+}
+
+@media (max-width: 992px) { .container { max-width: 960px; } .heroGrid, .aiGrid { gap: 2rem; } }
+@media (max-width: 768px) {
+  .heroGrid, .aiGrid { grid-template-columns: 1fr; }
+  .heroArt { height: 350px; grid-row: 1; margin-bottom: 2rem; }
+  .aiGrid { gap: 3rem; }
+  .aiContent { text-align: center; }
+  .aiContent .sectionTitle { text-align: center; }
+  .aiContent p { margin-inline: auto; }
+  .aiList { margin-inline: auto; max-width: 400px; text-align: left; }
+  .heroCtas { justify-content: center; }
+  .timeline { flex-direction: column; align-items: flex-start; }
+  .timeline::before { left: 12px; top: 20px; bottom: 20px; right: auto; width: 2px; }
+  .timelineItem { text-align: left; padding: 0 0 2rem 3rem; }
+  .timelineConnector { left: 0; transform: none; }
+}
+@media (max-width: 600px) {
+  .header { top: 0; }
+  .navBox { width: 100%; max-width: 100%; border-radius: 0; border-left: 0; border-right: 0; padding: 0.5rem 1rem; }
+}

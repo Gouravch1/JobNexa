@@ -1,0 +1,117 @@
+/* ApplicantsSection.module.css */
+
+.section {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f9fafb 0%, #eef2ff 100%);
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.viewAllButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    border: 1.5px solid var(--border-color);
+    background: white;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.viewAllButton:hover {
+    border-color: var(--primary-indigo);
+    color: var(--primary-indigo);
+    transform: translateX(3px);
+}
+
+/* Empty State */
+.emptyState {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.emptyIcon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.emptyTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 0.75rem;
+}
+
+.emptyText {
+    font-size: 1rem;
+    color: var(--text-medium);
+    margin: 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.applicantsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .section {
+        padding: 3rem 1.5rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .viewAllButton {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .emptyState {
+        padding: 3rem 1.5rem;
+    }
+}

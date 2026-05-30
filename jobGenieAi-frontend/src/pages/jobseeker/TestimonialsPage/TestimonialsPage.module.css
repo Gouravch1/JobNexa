@@ -1,0 +1,144 @@
+/* TestimonialsPage.module.css */
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #fafafa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.main {
+    flex: 1;
+    padding: 6rem 2rem 4rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #111827;
+    margin: 0 0 0.75rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Testimonials Grid */
+.testimonialsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.testimonialCard {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.testimonialCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
+    border-color: #6366f1;
+}
+
+.cardHeader {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.userInfo {
+    flex: 1;
+}
+
+.userName {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0 0 0.25rem;
+}
+
+.userPosition {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+.rating {
+    margin-bottom: 1rem;
+}
+
+.star {
+    font-size: 1rem;
+}
+
+.testimonialText {
+    font-size: 0.95rem;
+    color: #374151;
+    line-height: 1.7;
+    margin: 0 0 1.25rem;
+    font-style: italic;
+}
+
+.companyBadge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #eef2ff;
+    color: #6366f1;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main {
+        padding: 5rem 1.5rem 4rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .testimonialsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonialCard {
+        padding: 1.5rem;
+    }
+}

@@ -1,0 +1,210 @@
+/* PostJobPage.module.css */
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #f9fafb 0%, #eef2ff 100%);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.main {
+    flex: 1;
+    padding: 5rem 2rem 4rem;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin: 0 0 0.5rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-medium);
+    margin: 0;
+}
+
+.backButton {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.backButton:hover {
+    border-color: var(--primary-indigo);
+    color: var(--primary-indigo);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.formCard {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.required {
+    color: #ef4444;
+}
+
+.input,
+.select,
+.textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #111827;
+    background: white;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+    outline: none;
+    border-color: var(--primary-indigo);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 200px;
+    line-height: 1.6;
+}
+
+.error {
+    font-size: 0.85rem;
+    color: #ef4444;
+    margin-top: 0.5rem;
+}
+
+.formActions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.cancelButton {
+    padding: 1rem 2rem;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.cancelButton:hover {
+    border-color: var(--text-dark);
+}
+
+.submitButton {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.submitButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(99, 102, 241, 0.35);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main {
+        padding: 5rem 1.5rem 4rem;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .backButton {
+        width: 100%;
+    }
+
+    .formCard {
+        padding: 2rem 1.5rem;
+    }
+
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .formActions {
+        flex-direction: column-reverse;
+    }
+
+    .cancelButton,
+    .submitButton {
+        width: 100%;
+    }
+}

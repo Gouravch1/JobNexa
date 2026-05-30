@@ -1,0 +1,82 @@
+server:
+  port: 8080
+  tomcat:
+    max-http-form-post-size: 50MB
+    max-swallow-size: 50MB
+
+spring:
+  config:
+    # Local secrets: copy application-local.yml.example → application-local.yml (gitignored)
+    import: optional:classpath:application-local.yml
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/hirevue_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 10000
+          timeout: 10000
+          writetimeout: 10000
+
+# JWT Configuration
+jwt:
+  secret: ${JWT_SECRET:}
+  expiration: 86400000  # 24 hours in milliseconds
+
+# ElevenLabs AI Configuration (TTS + STT)
+elevenlabs:
+  api:
+    key: ${ELEVENLABS_API_KEY:}
+    base-url: https://api.elevenlabs.io
+    voice-id: ${ELEVENLABS_VOICE_ID:JBFqnCBsd6RMkjVDRZzb}
+    model-id: eleven_v3
+
+# # DeepSeek AI Configuration (Answer Evaluation & Feedback)
+# deepseek:
+#   api:
+#     key: ${DEEPSEEK_API_KEY:}
+#     base-url: https://api.deepseek.com
+#     model: deepseek-chat
+
+# Ollama / Llama Configuration — question generation on local machine
+ollama:
+  base-url: http://localhost:11434
+  model: "llama3.2:1b"
+
+# File Upload
+file:
+  upload-dir: ./uploads
+
+# Email notifications (set credentials in application-local.yml)
+app:
+  mail:
+    enabled: ${MAIL_ENABLED:false}
+    from: ${MAIL_FROM:}
+    from-name: ${MAIL_FROM_NAME:JobGenie AI}
